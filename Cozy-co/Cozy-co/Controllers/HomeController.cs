@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CozyCo.Models;
 using Microsoft.AspNetCore.Mvc;
-using Cozy_co.Models;
+using System.Diagnostics;
 
 namespace Cozy_co.Controllers
 {
