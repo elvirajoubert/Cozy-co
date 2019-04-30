@@ -52,5 +52,14 @@ namespace CozyCo.WebUI.Controllers
 
             return View(nameof(Index), Properties);
         }
+
+
+        //property/edit/1
+        public IActionResult Edit(int id)  //--> we get Id  from URL
+        {
+
+            var property = Properties.Single(p => p.Id == id);
+            return View(property);
+        }
     }
 }
