@@ -1,18 +1,26 @@
 ﻿@model Property
-@*Same page for Add and Edit
+@*Same page for Add and Edit (actions)
     Add -> Model is null
     Edit -> Model is not null
 *@
 
-@{ //Ternary operator
+@{
+    //Ternary operator
     var action = Model == null ? "Add" : "Edit";
-
 }
 
 
+@if (action == "Add")
+{
+    <h1> Add a new property </h1>
 
-<h1>Add a new property</h1>
-<h1>Edit Property</h1>
+}
+else
+{
+    <h1>Edit Property</h1>
+}
+
+
 
 <form asp-action="@action" asp-controller="property" method="post">
 

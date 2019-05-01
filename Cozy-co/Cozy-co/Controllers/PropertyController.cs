@@ -25,7 +25,7 @@ namespace CozyCo.WebUI.Controllers
         //GET property/add
         public IActionResult Add()
         {
-            return View();
+            return View("Form");//-> Add.cshtml, renamed to Form.cshtml
         }
 
         [HttpPost]
@@ -59,7 +59,27 @@ namespace CozyCo.WebUI.Controllers
         {
 
             var property = Properties.Single(p => p.Id == id);
-            return View(property);
+
+            return View("Form", property); //Edit.cshtml, renamed to Form.cshtml
+        }
+
+        [HttpPost]
+
+        //get Id from URL
+        //get updated property from the FORM
+
+        public IActionResult Edit(int id, Property updatedProperty)
+        {
+            var oldProperty = Properties.Single(p => p.Id == id);
+
+            oldProperty.Address = updatedProperty.Address;
+            oldProperty.Address2 = updatedProperty.Address2;
+            oldProperty.City = updatedProperty.City;
+            oldProperty.Image = updatedProperty.Image;
+            oldProperty.Zipcode = updatedProperty.Zipcode;
+
+            return View(nameof(Index), Properties);
+
         }
     }
 }
