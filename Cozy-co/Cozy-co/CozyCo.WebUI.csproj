@@ -15,7 +15,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\CozyCo.Model\CozyCo.Models.csproj" />
+    <ProjectReference Include="..\CozyCo.Model\CozyCo.Domain.csproj" />
   </ItemGroup>
 
 </Project>

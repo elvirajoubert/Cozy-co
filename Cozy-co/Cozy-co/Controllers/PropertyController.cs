@@ -1,4 +1,4 @@
-﻿using CozyCo.Models;
+﻿using CozyCo.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +30,15 @@ namespace CozyCo.WebUI.Controllers
 
         [HttpPost]
         public IActionResult Add(Property newProperty) //receive data from HTML form.
+
         {
-            Properties.Add(newProperty);
-            return View(nameof(Index), Properties);
+            if (ModelState.IsValid) // all required fields are required
+            {
+                //We should be able to add the new property
+                Properties.Add(newProperty);
+                return View(nameof(Index), Properties);
+            }
+            return View("Form");
 
         }
 
@@ -70,16 +76,22 @@ namespace CozyCo.WebUI.Controllers
 
         public IActionResult Edit(int id, Property updatedProperty)
         {
-            var oldProperty = Properties.Single(p => p.Id == id);
+            if (ModelState.IsValid)
+            {
+                var oldProperty = Properties.Single(p => p.Id == id);
 
-            oldProperty.Address = updatedProperty.Address;
-            oldProperty.Address2 = updatedProperty.Address2;
-            oldProperty.City = updatedProperty.City;
-            oldProperty.Image = updatedProperty.Image;
-            oldProperty.Zipcode = updatedProperty.Zipcode;
+                oldProperty.Address = updatedProperty.Address;
+                oldProperty.Address2 = updatedProperty.Address2;
+                oldProperty.City = updatedProperty.City;
+                oldProperty.Image = updatedProperty.Image;
+                oldProperty.Zipcode = updatedProperty.Zipcode;
 
-            return View(nameof(Index), Properties);
+                return View(nameof(Index), Properties);
 
+            }
+            return View("Form", updatedProperty); //By passing updated property
+                                                  //we trigger the logic 
+                                                  //for Edit within the Form.cshtml
         }
     }
 }
