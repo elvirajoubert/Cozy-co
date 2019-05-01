@@ -4,7 +4,7 @@ namespace CozyCo.Domain.Models
 {
     public class Property
     {
-        public int Id { get; set; }
+        public int Id { get; set; }  //For DB purposes to make it identifiable
 
         [Required]
         public string Address { get; set; }
