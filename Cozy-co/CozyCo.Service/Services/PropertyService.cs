@@ -1,4 +1,6 @@
-﻿namespace CozyCo.Service.Services
+﻿using CozyCo.Domain.Models;
+
+namespace CozyCo.Service.Services
 {
     public interface IPropertyService
     {
@@ -18,8 +20,36 @@
         bool Delete(int id);
     }
 
-    public class PropertyService
-    {
+    public class PropertyService : IPropertyService
 
+    {
+        private readonly IPropertyRepository _propertyRepository;  //--> null
+
+        //Added  a dependency to the constructor
+        public PropertyService(IPropertyRepository propertyRepository)
+        {
+            _propertyRepository = propertyRepository; //-->not be null
+        }
+        public Property Create(Property newProperty)
+        {
+
+            //Can add more logic to veify a new property before creating
+            return _propertyRepository.Create(newProperty);
+        }
+
+        public bool Delete(int id)
+        {
+            return _propertyRepository.Delete(id);
+        }
+
+        public Property GetById(int id)
+        {
+            return _propertyRepository.GetById(id);
+        }
+
+        public Property Update(Property updatedProperty)
+        {
+            return _propertyRepository.Update(updatedProperty);
+        }
     }
 }
