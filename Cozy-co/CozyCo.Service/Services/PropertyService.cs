@@ -1,4 +1,5 @@
 ﻿using CozyCo.Domain.Models;
+using System.Collections.Generic;
 
 namespace CozyCo.Service.Services
 {
@@ -8,7 +9,7 @@ namespace CozyCo.Service.Services
 
 
         Property GetById(int id);
-        //ICollection<Property> GetByLandlordId(int landlordId);
+        ICollection<Property> GetAllProperties();
 
         //Create
         Property Create(Property newProperty);
@@ -29,6 +30,11 @@ namespace CozyCo.Service.Services
         public PropertyService(IPropertyRepository propertyRepository)
         {
             _propertyRepository = propertyRepository; //-->not be null
+        }
+
+        public ICollection<Property> GetProperties()
+        {
+            return _propertyRepository.GetAllProperties();
         }
         public Property Create(Property newProperty)
         {
