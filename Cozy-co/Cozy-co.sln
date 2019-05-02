@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CozyCo.WebUI", "Cozy-co\Coz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CozyCo.Domain", "CozyCo.Model\CozyCo.Domain.csproj", "{4A1DD442-8178-4F78-9B99-76CA8DC5AF61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozyCo.Data", "CozyCo.Data\CozyCo.Data.csproj", "{2C2CCC93-F58E-44BF-BF46-A3B8EE1E28B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CozyCo.Data", "CozyCo.Data\CozyCo.Data.csproj", "{2C2CCC93-F58E-44BF-BF46-A3B8EE1E28B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozyCo.Service", "CozyCo.Service\CozyCo.Service.csproj", "{14F542AA-448E-46F9-9DD4-12C0CAF72970}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{2C2CCC93-F58E-44BF-BF46-A3B8EE1E28B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C2CCC93-F58E-44BF-BF46-A3B8EE1E28B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C2CCC93-F58E-44BF-BF46-A3B8EE1E28B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F542AA-448E-46F9-9DD4-12C0CAF72970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F542AA-448E-46F9-9DD4-12C0CAF72970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F542AA-448E-46F9-9DD4-12C0CAF72970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F542AA-448E-46F9-9DD4-12C0CAF72970}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
