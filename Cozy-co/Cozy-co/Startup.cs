@@ -1,4 +1,5 @@
-﻿using CozyCo.Service.Services;
+﻿using CozyCo.Data.Interfaces;
+using CozyCo.Service.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +32,7 @@ namespace Cozy_co
             //Wherever we have dependency in a constructor
 
             services.AddSingleton<IPropertyService, PropertyService>();
+            services.AddSingleton<IPropertyRepository, SqlServerPropertyRepository>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
